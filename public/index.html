@@ -2,31 +2,64 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+	<!-- import the Semantic UI style library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+	<link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <!-- using the preset style of Semantic UI -->
+    <div class="ui container">
+		<div class="ui grid">
+			<div class="six wide column">
+				<div class="ui form">
+                    <div id="car">
+				        <div class="field">
+							<input class="model" type="text" placeholder="Car model"/>
+						</div>
+						<div class="field">
+							<input class="price-by-day" type="number" placeholder="Price by day"/>
+						</div>
+						<div class="field">
+							<input class="price-by-km" type="number" placeholder="Price by km"/>
+						</div>
+					</div>	
+                    <div id="rental">
+						<div class="field">
+							<input class="begin" type="date" placeholder="Rental begin date"/>
+						</div>
+						<div class="field">
+							<input class="end" type="date" placeholder="Rental end date"/>
+						</div>
+						<div class="field">
+							<input class="distance" type="number" placeholder="Distance in km"/>
+						</div>
+						<div class="field">
+							<div class="ui checkbox">
+								<input type="checkbox" class="option" tabindex="0" class="hidden">
+								<label>Deductible option</label>
+							</div>
+						</div>
+						<!-- using the preset style of button -->
+						<button class="ui blue button" id="compute">Compute</button>
+					</div>
+				</div>
+			</div>
+			<div class="six wide column" id="actors"></div>
+		 </div>
+		<script id="template" type="x-tmpl-mustache">
+           {{#actors}}
+              <div class="actor">
+                <span>{{who}}</span>
+                <span>{{type}}</span>
+                <span>{{amount}}</span>
+              </div>
+           {{/actors}}
+        </script>
+	</div>
+	<!-- import the javascript libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
   </body>
