@@ -1,0 +1,10 @@
+body {
+	font-family: Calibri, sans-serif;
+}
+
+.ui.container {
+	margin-top: 40px;
+}
+.ui.form .field:last-child {
+	margin-bottom: 1em;
+}
